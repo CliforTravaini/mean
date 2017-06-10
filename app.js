@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-const TesteAPI = require('./api/routes/testeRoutes');
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://127.0.0.1/mean')
 
+const TesteAPI = require('./api/routes/testeRoutes')
+const UsuarioAPI = require('./api/routes/UsuarioRoutes')
 
 
 //var index = require('./routes/index');
@@ -26,8 +29,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/teste', TesteAPI);
-
+app.use('/teste', TesteAPI)
+app.use('/api/v1/usuario', UsuarioAPI)
 
 //app.use('/', index);
 //app.use('/users', users);

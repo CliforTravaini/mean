@@ -22,6 +22,21 @@ function myConfig($stateProvider, $urlRouterProvider){
 		}
 	})
 
+
+	.state('cnsUsuario', {
+		url: '/usuario',
+		views: {
+			'':{
+				templateUrl: './views/cnsUsuario.html',
+				controller: 'UsuarioController',
+				controllerAs: 'vm'				
+			},
+			'menu': {
+				templateUrl: './views/menu.html'
+			}
+		}
+	})
+
 	$urlRouterProvider.otherwise('/home')
 
 }
