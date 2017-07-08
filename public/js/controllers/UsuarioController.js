@@ -9,6 +9,16 @@ function UsuarioController($http){
 	vm.Usuario = {}
 	vm.Usuarios = []
 
+
+	vm.ListarUm = function(id) {
+		$http({
+			method: 'GET',
+			url: '/api/v1/usuario/retrieve/' + id
+		}).then(function(ret){
+			vm.Usuario = ret.data
+		})
+	}
+
 	vm.ListarTodos = function(){
 		$http({
 			method: 'GET',
