@@ -18,7 +18,7 @@ function LoginController($http, $state){
 			if( retorno.data.error === false){
 				$state.go('home')
 			}else{
-				sweetAlert("Oops...", retorno.data.message, "error");		
+				sweetAlert("Atenção...", retorno.data.message, "error");		
 			}
 
 		})
